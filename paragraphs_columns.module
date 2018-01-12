@@ -8,9 +8,6 @@
 /**
  * Implements hook_page_attachments().
  */
-/**
- * Implements hook_page_attachments().
- */
 function paragraphs_columns_page_attachments(array &$attachments) {
   $attachments['#attached']['library'][] = 'paragraphs_columns/grid';
 }
