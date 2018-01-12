@@ -1,0 +1,33 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.column_text.field_column_width
+    - field.field.paragraph.column_text.field_text
+    - paragraphs.paragraphs_type.column_text
+  module:
+    - text
+id: paragraph.column_text.default
+targetEntityType: paragraph
+bundle: column_text
+mode: default
+content:
+  field_column_width:
+    weight: 0
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_text:
+    weight: 1
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

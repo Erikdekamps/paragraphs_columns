@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: row
+label: Row
+icon_uuid: null
+description: 'A row that can contain multiple columns.'
+behavior_plugins: {  }

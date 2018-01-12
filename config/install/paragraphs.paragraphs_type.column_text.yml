@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: column_text
+label: 'Column text'
+icon_uuid: null
+description: 'A text column that can be placed in a row.'
+behavior_plugins: {  }

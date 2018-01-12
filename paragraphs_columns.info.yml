@@ -1,0 +1,13 @@
+name: Columns
+description: 'Implements bootstrap columns in paragraphs.'
+type: module
+core: 8.x
+dependencies:
+  - entity_reference_revisions
+  - features
+  - field
+  - paragraphs
+  - paragraphs_browser
+  - text
+version: 8.x-0.1
+package: Paragraphs

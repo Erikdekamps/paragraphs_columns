@@ -1,0 +1,12 @@
+langcode: en
+status: true
+dependencies: {  }
+id: content
+label: Content
+groups:
+  columns:
+    label: Columns
+    id: columns
+    weight: 0
+map:
+  column_text: columns
