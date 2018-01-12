@@ -1,5 +1,5 @@
 name: Columns
-description: 'Implements bootstrap columns in paragraphs.'
+description: 'Implement bootstrap columns in paragraphs.'
 type: module
 core: 8.x
 dependencies:
