@@ -11,3 +11,5 @@ dependencies:
   - text
 version: 8.x-0.1
 package: Paragraphs
+libraries:
+  - paragraphs_columns/grid
