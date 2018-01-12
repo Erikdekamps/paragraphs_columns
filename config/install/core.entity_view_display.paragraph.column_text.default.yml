@@ -12,15 +12,6 @@ targetEntityType: paragraph
 bundle: column_text
 mode: default
 content:
-  field_column_width:
-    weight: 1
-    label: hidden
-    settings:
-      thousand_separator: ''
-      prefix_suffix: true
-    third_party_settings: {  }
-    type: number_integer
-    region: content
   field_text:
     weight: 0
     label: hidden
@@ -28,4 +19,5 @@ content:
     third_party_settings: {  }
     type: text_default
     region: content
-hidden: {  }
+hidden:
+  field_column_width: true

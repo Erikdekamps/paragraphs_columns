@@ -1,4 +1,5 @@
-grid:
+bootstrap.grid:
+  version: 1.0
   css:
     theme:
       assets/css/bootstrap/bootstrap-grid.min.css: {}
