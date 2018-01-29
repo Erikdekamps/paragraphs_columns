@@ -26,7 +26,7 @@ function paragraphs_columns_theme_suggestions_paragraph_alter(&$suggestions, $va
 /**
  * Implements hook_theme().
  */
-function paragraphs_columns_theme($existing, $type, $theme, $path) {
+function paragraphs_columns_theme() {
 
   $theme_templates = [];
   $paragraph_types = _paragraphs_columns_get_paragraph_types();
@@ -63,6 +63,9 @@ function paragraphs_columns_theme_registry_alter(&$theme_registry) {
       unset($theme_registry['paragraphs_columns__' . $type]);
     }
   }
+
+  // Change the field templates directory.
+  $theme_registry['field']['path'] = $module_path . '/templates/field';
 }
 
 /**
