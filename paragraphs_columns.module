@@ -5,7 +5,11 @@
  * The main module file.
  *
  * Code taken from @link post by jeremypeter.
+ *
+ * @link: https://www.drupal.org/forum/support/module-development-and-code-questions/2015-06-03/drupal-8-override-template-with#comment-12159763
  */
+
+use Drupal\paragraphs\Entity\Paragraph;
 
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
@@ -95,9 +99,60 @@ function paragraphs_columns_preprocess_node(&$variables) {
  * Implements hook_preprocess_HOOK().
  */
 function paragraphs_columns_preprocess_paragraph(&$variables) {
+
+  // Add the column width value.
   $paragraph = $variables['elements']['#paragraph'];
   if ($paragraph->hasField('field_column_width')) {
     $column_width = $paragraph->get('field_column_width')->value;
+    if (!empty($column_width) && $column_width == 'auto') {
+      $column_width = _paragraphs_columns_calculate_column_width($paragraph);
+    }
     $variables['column_width'] = 'col-md-' . $column_width;
   }
+}
+
+/**
+ * Calculate the column width.
+ *
+ * @param \Drupal\paragraphs\Entity\Paragraph $paragraph
+ *   The paragraph the column is in.
+ *
+ * @return float
+ *   Returns the column width as integer.
+ */
+function _paragraphs_columns_calculate_column_width(Paragraph $paragraph) {
+
+  // Initialize the starting values.
+  $auto_paragraphs = 0;
+  $auto_width = 12;
+
+  // Get the wrapper (row) paragraph.
+  $pid = $paragraph->get('parent_id')->value;
+  $parent_paragraph = Paragraph::load($pid);
+
+  // Check for the columns the parent has.
+  if ($parent_paragraph->hasField('field_column')) {
+    $columns = $parent_paragraph->get('field_column')->getValue();
+    if (!empty($columns)) {
+
+      // Loop through the columns and calculate the width.
+      foreach ($columns as $column) {
+        $paragraph_column = Paragraph::load($column['target_id']);
+        if ($paragraph_column->hasField('field_column_width')) {
+          $column_width = $paragraph_column->get('field_column_width')->value;
+          $auto_width -= $column_width;
+          if ($column_width == 'auto') {
+            $auto_paragraphs++;
+          }
+        }
+      }
+    }
+  }
+
+  // Set the auto width based on the amount of auto width paragraphs.
+  $paragraph_width = $paragraph->get('field_column_width')->value;
+  $column_width = floor($paragraph_width == 'auto' ? floor($auto_width / $auto_paragraphs) : $paragraph_width);
+
+  // Return the column width.
+  return $column_width;
 }

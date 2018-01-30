@@ -4,21 +4,19 @@ dependencies:
   config:
     - field.storage.paragraph.field_column_width
     - paragraphs.paragraphs_type.column_text
+  module:
+    - options
 id: paragraph.column_text.field_column_width
 field_name: field_column_width
 entity_type: paragraph
 bundle: column_text
-label: Width
-description: 'The Bootstrap grid system uses a maximum of 12 columns in total.'
-required: false
+label: 'Column width'
+description: 'Bootstrap''s grid system allows up to 12 columns across the page.'
+required: true
 translatable: false
 default_value:
   -
-    value: 1
+    value: auto
 default_value_callback: ''
-settings:
-  min: 1
-  max: 12
-  prefix: ''
-  suffix: ''
-field_type: integer
+settings: {  }
+field_type: list_string

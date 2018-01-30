@@ -13,11 +13,10 @@ bundle: column_text
 mode: default
 content:
   field_column_width:
-    weight: 0
-    settings:
-      placeholder: ''
+    weight: 2
+    settings: {  }
     third_party_settings: {  }
-    type: number
+    type: options_select
     region: content
   field_text:
     weight: 1
