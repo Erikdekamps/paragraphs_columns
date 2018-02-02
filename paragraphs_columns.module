@@ -4,12 +4,13 @@
  * @file
  * The main module file.
  *
- * Code taken from @link post by jeremypeter.
+ * Code taken from @link post by jeremypeter @endlink.
  *
- * @link: https://www.drupal.org/forum/support/module-development-and-code-questions/2015-06-03/drupal-8-override-template-with#comment-12159763
+ * @link https://www.drupal.org/forum/support/module-development-and-code-questions/2015-06-03/drupal-8-override-template-with#comment-12159763 @endlink
  */
 
 include_once 'includes/functions.inc';
+include_once 'includes/processing.inc';
 include_once 'includes/alters.inc';
 
 /**

@@ -2,18 +2,28 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.row.field_background_color
     - field.field.paragraph.row.field_column
+    - field.field.paragraph.row.field_full_width
     - paragraphs.paragraphs_type.row
   module:
+    - jquery_colorpicker
     - paragraphs_browser
 id: paragraph.row.default
 targetEntityType: paragraph
 bundle: row
 mode: default
 content:
+  field_background_color:
+    weight: 1
+    settings:
+      color: FFFFFF
+    third_party_settings: {  }
+    type: jquery_colorpicker
+    region: content
   field_column:
     type: entity_reference_paragraphs_browser
-    weight: 0
+    weight: 2
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -25,6 +35,13 @@ content:
       modal_width: 80%
       modal_height: auto
     third_party_settings: {  }
+    region: content
+  field_full_width:
+    weight: 0
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
     region: content
 hidden:
   created: true

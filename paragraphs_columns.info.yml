@@ -6,6 +6,7 @@ dependencies:
   - entity_reference_revisions
   - features
   - field
+  - jquery_colorpicker
   - options
   - paragraphs
   - paragraphs_browser

@@ -30,4 +30,10 @@ function paragraphs_columns_preprocess_paragraph(&$variables) {
     }
     $variables['column_width'] = 'col-md-' . $column_width;
   }
+
+  // Add the background color.
+  if ($paragraph->hasField('field_background_color')) {
+    $color = $paragraph->get('field_background_color')->value;
+    _paragraphs_columns_set_background_color($paragraph, $color);
+  }
 }
