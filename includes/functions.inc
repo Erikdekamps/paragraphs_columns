@@ -68,21 +68,16 @@ function _paragraphs_columns_calculate_column_width(Paragraph $paragraph) {
 /**
  * Add a background color to a paragraph.
  *
- * @param \Drupal\paragraphs\Entity\Paragraph $paragraph
- *   The paragraph to add the color to.
+ * @param array $variables
+ *   The paragraph variables.
  * @param string $color
  *   The color code.
  */
-function _paragraphs_columns_set_background_color(Paragraph $paragraph, $color) {
+function _paragraphs_columns_set_background_color(array &$variables, $color) {
 
-}
+  // Generate the style.
+  $style = 'background-color:#' . $color . ';';
 
-/**
- * Implements hook_preprocess_HOOK().
- */
-function paragraphs_columns_preprocess_field(&$variables) {
-  $element = $variables['element'];
-  if ($element['#bundle'] == 'paragraphed_page') {
-
-  }
+  // Set the attribute.
+  $variables['attributes']['style'][] = $style;
 }
