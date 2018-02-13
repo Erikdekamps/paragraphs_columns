@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_background_color
+    - paragraphs.paragraphs_type.column_text
+  module:
+    - jquery_colorpicker
+id: paragraph.column_text.field_background_color
+field_name: field_background_color
+entity_type: paragraph
+bundle: column_text
+label: 'Background color'
+description: 'The background color.'
+required: false
+translatable: true
+default_value:
+  -
+    value: FFFFFF
+default_value_callback: ''
+settings: {  }
+field_type: jquery_colorpicker

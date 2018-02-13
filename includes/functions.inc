@@ -66,6 +66,20 @@ function _paragraphs_columns_calculate_column_width(Paragraph $paragraph) {
 }
 
 /**
+ * Set the column width for the paragraph.
+ *
+ * @param array $variables
+ *   The paragraph variables.
+ * @param int $column_width
+ *   The column width.
+ */
+function _paragraphs_columns_set_column_width(array &$variables, $column_width) {
+
+  // Set the class for the column width.
+  $variables['attributes']['class'] = ['col-md-' . $column_width];
+}
+
+/**
  * Add a background color to a paragraph.
  *
  * @param array $variables

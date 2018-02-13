@@ -28,20 +28,26 @@ function paragraphs_columns_preprocess_paragraph(&$variables) {
     $column_width = $paragraph->get('field_column_width')->value;
     if (!empty($column_width) && $column_width == 'auto') {
       $column_width = _paragraphs_columns_calculate_column_width($paragraph);
+      _paragraphs_columns_set_column_width($variables, $column_width);
     }
-    $variables['column_width'] = 'col-md-' . $column_width;
   }
 
   // Add the background color.
   if ($paragraph->hasField('field_background_color')) {
-    $color = $paragraph->get('field_background_color')->value;
-    _paragraphs_columns_set_background_color($variables, $color);
+    $field = $paragraph->get('field_background_color');
+    $color = $field->value;
+    if (!empty($color)) {
+      _paragraphs_columns_set_background_color($variables, $color);
+    }
   }
 
   // Add the background color.
   if ($paragraph->hasField('field_text_color')) {
-    $color = $paragraph->get('field_text_color')->value;
-    _paragraphs_columns_set_text_color($variables, $color);
+    $field = $paragraph->get('field_text_color');
+    $color = $field->value;
+    if (!empty($color)) {
+      _paragraphs_columns_set_text_color($variables, $color);
+    }
   }
 
   // Add the background color.

@@ -2,8 +2,10 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.column_text.field_background_color
     - field.field.paragraph.column_text.field_column_width
     - field.field.paragraph.column_text.field_text
+    - field.field.paragraph.column_text.field_text_color
     - paragraphs.paragraphs_type.column_text
   module:
     - text
@@ -20,4 +22,6 @@ content:
     type: text_default
     region: content
 hidden:
+  field_background_color: true
   field_column_width: true
+  field_text_color: true
