@@ -36,4 +36,10 @@ function paragraphs_columns_preprocess_paragraph(&$variables) {
     $color = $paragraph->get('field_background_color')->value;
     _paragraphs_columns_set_background_color($variables, $color);
   }
+
+  // Add the background color.
+  if ($paragraph->hasField('field_text_color')) {
+    $color = $paragraph->get('field_text_color')->value;
+    _paragraphs_columns_set_text_color($variables, $color);
+  }
 }

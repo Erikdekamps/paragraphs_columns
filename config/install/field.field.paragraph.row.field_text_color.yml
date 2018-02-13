@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_text_color
+    - paragraphs.paragraphs_type.row
+  module:
+    - jquery_colorpicker
+id: paragraph.row.field_text_color
+field_name: field_text_color
+entity_type: paragraph
+bundle: row
+label: 'Text color'
+description: 'Select a text color.'
+required: true
+translatable: false
+default_value:
+  -
+    value: '000000'
+default_value_callback: ''
+settings: {  }
+field_type: jquery_colorpicker

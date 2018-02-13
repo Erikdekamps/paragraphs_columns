@@ -5,6 +5,7 @@ dependencies:
     - field.field.paragraph.row.field_background_color
     - field.field.paragraph.row.field_column
     - field.field.paragraph.row.field_full_width
+    - field.field.paragraph.row.field_text_color
     - paragraphs.paragraphs_type.row
   module:
     - jquery_colorpicker
@@ -23,7 +24,7 @@ content:
     region: content
   field_column:
     type: entity_reference_paragraphs_browser
-    weight: 2
+    weight: 3
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -42,6 +43,13 @@ content:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
+    region: content
+  field_text_color:
+    weight: 2
+    settings:
+      color: FFFFFF
+    third_party_settings: {  }
+    type: jquery_colorpicker
     region: content
 hidden:
   created: true

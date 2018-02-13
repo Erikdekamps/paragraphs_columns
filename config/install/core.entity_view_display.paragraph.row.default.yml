@@ -5,6 +5,7 @@ dependencies:
     - field.field.paragraph.row.field_background_color
     - field.field.paragraph.row.field_column
     - field.field.paragraph.row.field_full_width
+    - field.field.paragraph.row.field_text_color
     - paragraphs.paragraphs_type.row
   module:
     - entity_reference_revisions
@@ -25,3 +26,4 @@ content:
 hidden:
   field_background_color: true
   field_full_width: true
+  field_text_color: true

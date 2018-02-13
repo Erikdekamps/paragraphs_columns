@@ -81,3 +81,20 @@ function _paragraphs_columns_set_background_color(array &$variables, $color) {
   // Set the attribute.
   $variables['attributes']['style'][] = $style;
 }
+
+/**
+ * Add a background color to a paragraph.
+ *
+ * @param array $variables
+ *   The paragraph variables.
+ * @param string $color
+ *   The color code.
+ */
+function _paragraphs_columns_set_text_color(array &$variables, $color) {
+
+  // Generate the style.
+  $style = 'color:#' . $color . ';';
+
+  // Set the attribute.
+  $variables['attributes']['style'][] = $style;
+}
