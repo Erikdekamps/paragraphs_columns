@@ -3,3 +3,7 @@ bootstrap.grid:
   css:
     theme:
       assets/css/bootstrap/bootstrap-grid.min.css: {}
+paragraphs_columns:
+  css:
+    theme:
+      assets/css/paragraphs_columns.css: {}

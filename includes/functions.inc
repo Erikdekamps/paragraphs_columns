@@ -83,7 +83,7 @@ function _paragraphs_columns_set_background_color(array &$variables, $color) {
 }
 
 /**
- * Add a background color to a paragraph.
+ * Add a text color to a paragraph.
  *
  * @param array $variables
  *   The paragraph variables.
@@ -97,4 +97,16 @@ function _paragraphs_columns_set_text_color(array &$variables, $color) {
 
   // Set the attribute.
   $variables['attributes']['style'][] = $style;
+}
+
+/**
+ * Makes a row full width.
+ *
+ * @param array $variables
+ *   The paragraph variables.
+ */
+function _paragraphs_columns_set_row_full_width(array &$variables) {
+
+  // Set the attribute.
+  $variables['attributes']['class'] = ['row', 'full-width'];
 }

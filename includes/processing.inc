@@ -13,6 +13,7 @@ function paragraphs_columns_preprocess_node(&$variables) {
   // Attach the bootstrap grid.
   if ($variables['node']->getType() === 'paragraphed_page') {
     $variables['#attached']['library'][] = 'paragraphs_columns/bootstrap.grid';
+    $variables['#attached']['library'][] = 'paragraphs_columns/paragraphs_columns';
   }
 }
 
@@ -41,5 +42,10 @@ function paragraphs_columns_preprocess_paragraph(&$variables) {
   if ($paragraph->hasField('field_text_color')) {
     $color = $paragraph->get('field_text_color')->value;
     _paragraphs_columns_set_text_color($variables, $color);
+  }
+
+  // Add the background color.
+  if ($paragraph->hasField('field_full_width') && $paragraph->get('field_full_width')->value) {
+    _paragraphs_columns_set_row_full_width($variables);
   }
 }
