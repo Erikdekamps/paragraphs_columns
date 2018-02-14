@@ -1,4 +1,4 @@
-name: Columns
+name: 'Paragraphs Columns'
 description: 'Implement bootstrap columns in paragraphs.'
 type: module
 core: 8.x
@@ -7,9 +7,13 @@ dependencies:
   - features
   - field
   - jquery_colorpicker
+  - menu_ui
+  - node
   - options
   - paragraphs
   - paragraphs_browser
+  - path
   - text
+  - user
 version: 8.x-0.1
 package: Paragraphs
