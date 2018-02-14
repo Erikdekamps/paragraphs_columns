@@ -1,5 +1,5 @@
 /* Hack to break out of the wrapper */
-.row.full-width {
+.full-width {
   margin: 1em calc(50% - 50vw);
 }
 /* Reset the margin top and bottom */

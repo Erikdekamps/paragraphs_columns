@@ -8,7 +8,29 @@
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
  */
-function paragraphs_columns_theme_suggestions_paragraph_alter(&$suggestions, $variables) {
+function paragraphs_columns_theme_suggestions_node_alter(array &$suggestions, array $variables, $hook) {
+
+  // Try to get the node, so we can check if we're on the node page.
+  if ($node = \Drupal::request()->attributes->get('node')) {
+    $suggestions[] = 'custom__' . $hook . '__' . $node->bundle();
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function paragraphs_columns_theme_suggestions_page_alter(array &$suggestions, array $variables, $hook) {
+
+  // Try to get the node, so we can check if we're on the node page.
+  if ($node = \Drupal::request()->attributes->get('node')) {
+    $suggestions[] = 'custom__' . $hook . '__' . $node->bundle();
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function paragraphs_columns_theme_suggestions_paragraph_alter(array &$suggestions, array $variables) {
 
   // Get the information.
   $entity = $variables['elements']['#paragraph'];
@@ -43,4 +65,8 @@ function paragraphs_columns_theme_registry_alter(&$theme_registry) {
 
   // Change the field templates directory.
   $theme_registry['field']['path'] = $module_path . '/templates/field';
+
+  // Test for node & page as well.
+  $theme_registry['node']['path'] = $module_path . '/templates/node';
+  $theme_registry['page']['path'] = $module_path . '/templates/page';
 }

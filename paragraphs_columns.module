@@ -31,5 +31,10 @@ function paragraphs_columns_theme() {
     'base hook' => 'paragraph',
   ];
 
+  $theme_templates['paragraphed_page'] = [
+    'base hook' => 'page',
+    'render element' => 'page',
+  ];
+
   return $theme_templates;
 }
