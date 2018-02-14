@@ -5,6 +5,7 @@
  * Include file for the helper functions.
  */
 
+use Drupal\Core\Template\Attribute;
 use Drupal\paragraphs\Entity\Paragraph;
 
 /**
@@ -114,13 +115,34 @@ function _paragraphs_columns_set_text_color(array &$variables, $color) {
 }
 
 /**
- * Makes a row full width.
+ * Create the row attributes.
  *
  * @param array $variables
  *   The paragraph variables.
+ * @param \Drupal\paragraphs\Entity\Paragraph $paragraph
+ *   The paragraph the column is in.
  */
-function _paragraphs_columns_set_row_full_width(array &$variables) {
+function _paragraphs_columns_add_row_attributes(array &$variables, Paragraph $paragraph) {
 
-  // Set the attribute.
-  $variables['attributes']['class'] = ['paragraph-container'];
+  // Set the main section attributes.
+  $variables['attributes']['class'][] = 'paragraph-container';
+
+  // Attribute object for the form container.
+  $container_attributes = new Attribute();
+  $container_attributes['class'] = ['container'];
+
+  // Check for full width.
+  if ($paragraph->hasField('field_full_width') && $paragraph->get('field_full_width')->value) {
+    $container_attributes['class'] = ['container-fluid'];
+  }
+
+  // Set the container attributes.
+  $variables['container_attributes'] = $container_attributes;
+
+  // Attribute object for the form row.
+  $row_attributes = new Attribute();
+  $row_attributes['class'] = ['row'];
+
+  // Set the row attributes.
+  $variables['row_attributes'] = $row_attributes;
 }

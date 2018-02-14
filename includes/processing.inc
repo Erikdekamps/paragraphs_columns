@@ -24,6 +24,8 @@ function paragraphs_columns_preprocess_paragraph(&$variables) {
 
   // Add the column width value.
   $paragraph = $variables['elements']['#paragraph'];
+
+  // Set the column width.
   if ($paragraph->hasField('field_column_width')) {
     $column_width = $paragraph->get('field_column_width')->value;
     if (!empty($column_width) && $column_width == 'auto') {
@@ -47,11 +49,12 @@ function paragraphs_columns_preprocess_paragraph(&$variables) {
     $color = $field->value;
     if (!empty($color)) {
       _paragraphs_columns_set_text_color($variables, $color);
+
     }
   }
 
-  // Add the background color.
-  if ($paragraph->hasField('field_full_width') && $paragraph->get('field_full_width')->value) {
-    _paragraphs_columns_set_row_full_width($variables);
+  // Add the attributes to the row paragraphs.
+  if ($paragraph->bundle() == 'row') {
+    _paragraphs_columns_add_row_attributes($variables, $paragraph);
   }
 }
