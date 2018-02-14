@@ -5,23 +5,16 @@ dependencies:
     - field.field.node.paragraphed_page.field_row
     - node.type.paragraphed_page
   module:
-    - entity_reference_revisions
     - user
 id: node.paragraphed_page.default
 targetEntityType: node
 bundle: paragraphed_page
 mode: default
 content:
-  field_row:
-    type: entity_reference_revisions_entity_view
-    weight: 102
-    label: above
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    region: content
   links:
-    weight: 100
+    weight: 0
     region: content
-hidden: {  }
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_row: true
