@@ -122,5 +122,5 @@ function _paragraphs_columns_set_text_color(array &$variables, $color) {
 function _paragraphs_columns_set_row_full_width(array &$variables) {
 
   // Set the attribute.
-  $variables['attributes']['class'] = ['row'];
+  $variables['attributes']['class'] = ['paragraph-container'];
 }

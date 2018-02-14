@@ -67,6 +67,10 @@ function paragraphs_columns_theme_registry_alter(&$theme_registry) {
   $theme_registry['field']['path'] = $module_path . '/templates/field';
 
   // Test for node & page as well.
-  $theme_registry['node']['path'] = $module_path . '/templates/node';
-  $theme_registry['page']['path'] = $module_path . '/templates/page';
+  $node = \Drupal::request()->attributes->get('node');
+
+  if ($node && $node->getType() == 'paragraphed_page') {
+    $theme_registry['node']['path'] = $module_path . '/templates/node';
+    $theme_registry['page']['path'] = $module_path . '/templates/page';
+  }
 }
