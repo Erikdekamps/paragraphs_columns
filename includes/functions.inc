@@ -133,7 +133,12 @@ function _paragraphs_columns_add_row_attributes(array &$variables, Paragraph $pa
 
   // Check for full width.
   if ($paragraph->hasField('field_full_width') && $paragraph->get('field_full_width')->value) {
-    /*$container_attributes['class'] = ['container-fluid'];*/
+    $variables['attributes']['class'][] = 'full-width';
+  }
+
+  // Check for full width on the content.
+  if ($paragraph->hasField('field_fluid') && $paragraph->get('field_fluid')->value) {
+    $container_attributes['class'] = ['container-fluid'];
   }
 
   // Set the container attributes.

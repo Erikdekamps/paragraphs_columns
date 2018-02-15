@@ -4,6 +4,7 @@ dependencies:
   config:
     - field.field.paragraph.row.field_background_color
     - field.field.paragraph.row.field_column
+    - field.field.paragraph.row.field_fluid
     - field.field.paragraph.row.field_full_width
     - field.field.paragraph.row.field_text_color
     - paragraphs.paragraphs_type.row
@@ -25,5 +26,6 @@ content:
     region: content
 hidden:
   field_background_color: true
+  field_fluid: true
   field_full_width: true
   field_text_color: true

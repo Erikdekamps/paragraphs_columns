@@ -1,6 +1,6 @@
 /* Hack to break out of the wrapper */
-.full-width {
-  margin: 1em calc(50% - 50vw);
+.paragraph-container.full-width {
+  margin: 0 calc(50% - 50vw);
 }
 /* Reset the margin top and bottom */
 .row {

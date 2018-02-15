@@ -4,6 +4,7 @@ dependencies:
   config:
     - field.field.paragraph.row.field_background_color
     - field.field.paragraph.row.field_column
+    - field.field.paragraph.row.field_fluid
     - field.field.paragraph.row.field_full_width
     - field.field.paragraph.row.field_text_color
     - paragraphs.paragraphs_type.row
@@ -16,7 +17,7 @@ bundle: row
 mode: default
 content:
   field_background_color:
-    weight: 1
+    weight: 2
     settings:
       color: FFFFFF
     third_party_settings: {  }
@@ -24,7 +25,7 @@ content:
     region: content
   field_column:
     type: entity_reference_paragraphs_browser
-    weight: 3
+    weight: 4
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -37,6 +38,13 @@ content:
       modal_height: auto
     third_party_settings: {  }
     region: content
+  field_fluid:
+    weight: 1
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
   field_full_width:
     weight: 0
     settings:
@@ -45,7 +53,7 @@ content:
     type: boolean_checkbox
     region: content
   field_text_color:
-    weight: 2
+    weight: 3
     settings:
       color: FFFFFF
     third_party_settings: {  }
