@@ -10,3 +10,17 @@
 .paragraph-container p {
   margin: initial;
 }
+.paragraph-container {
+  padding-top: 45px;
+  padding-bottom: 45px;
+}
+.paragraph-container .container,
+.paragraph-container .container-fluid {
+  padding-left: 0;
+  padding-right: 0;
+}
+.paragraph-container .container .row,
+.paragraph-container .container-fluid .row {
+  margin-left: 0;
+  margin-right: 0;
+}
