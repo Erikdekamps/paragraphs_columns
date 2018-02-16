@@ -4,5 +4,7 @@ description: 'Extend Paragraphs Columns with Images.'
 core: 8.x
 package: Paragraphs columns
 dependencies:
+  - field
+  - image
   - paragraphs
   - paragraphs_columns

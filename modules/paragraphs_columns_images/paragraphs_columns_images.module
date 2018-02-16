@@ -5,20 +5,30 @@
  * Contains paragraphs_columns_images.module.
  */
 
-use Drupal\Core\Routing\RouteMatchInterface;
+include_once 'includes/functions.inc';
 
 /**
- * Implements hook_help().
+ * Implements hook_theme().
  */
-function paragraphs_columns_images_help($route_name, RouteMatchInterface $route_match) {
-  switch ($route_name) {
-    // Main module help for the paragraphs_columns_images module.
-    case 'help.page.paragraphs_columns_images':
-      $output = '';
-      $output .= '<h3>' . t('About') . '</h3>';
-      $output .= '<p>' . t('Paragraphs Columns Images') . '</p>';
-      return $output;
+function paragraphs_columns_images_theme() {
 
-    default:
+  $theme_templates = [];
+  $paragraph_types = _paragraphs_columns_images_get_paragraph_types();
+
+  foreach ($paragraph_types as $type) {
+    $theme_templates['paragraph__paragraphs_columns__' . $type] = [
+      'base hook' => 'paragraph',
+    ];
   }
+
+  $theme_templates['paragraphs_columns'] = [
+    'base hook' => 'paragraph',
+  ];
+
+  $theme_templates['paragraphed_page'] = [
+    'base hook' => 'page',
+    'render element' => 'page',
+  ];
+
+  return $theme_templates;
 }

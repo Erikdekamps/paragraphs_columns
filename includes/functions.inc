@@ -15,9 +15,12 @@ use Drupal\paragraphs\Entity\Paragraph;
  *   Returns a list of paragraph types by machine name.
  */
 function _paragraphs_columns_get_paragraph_types() {
-  $paragraph_bundles = \Drupal::service('entity_type.bundle.info')
-    ->getBundleInfo('paragraph');
-  return array_keys($paragraph_bundles);
+
+  // Return predefined 'core' paragraph types.
+  return [
+    'row',
+    'column_text',
+  ];
 }
 
 /**

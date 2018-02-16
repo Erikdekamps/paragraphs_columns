@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.column_images.field_column_images
+    - paragraphs.paragraphs_type.column_images
+  module:
+    - image
+id: paragraph.column_images.default
+targetEntityType: paragraph
+bundle: column_images
+mode: default
+content:
+  field_column_images:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+hidden: {  }
