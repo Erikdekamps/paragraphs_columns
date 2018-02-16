@@ -2,7 +2,7 @@ name: 'Paragraphs Columns Images'
 type: module
 description: 'Extend Paragraphs Columns with Images.'
 core: 8.x
-package: Paragraphs
+package: Paragraphs columns
 dependencies:
   - paragraphs
   - paragraphs_columns

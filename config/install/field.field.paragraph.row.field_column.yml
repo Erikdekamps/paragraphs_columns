@@ -3,7 +3,6 @@ status: true
 dependencies:
   config:
     - field.storage.paragraph.field_column
-    - paragraphs.paragraphs_type.column_images
     - paragraphs.paragraphs_type.column_text
     - paragraphs.paragraphs_type.row
   module:
@@ -24,7 +23,6 @@ settings:
     negate: 0
     target_bundles:
       column_text: column_text
-      column_images: column_images
     target_bundles_drag_drop:
       row:
         weight: 2
@@ -33,6 +31,6 @@ settings:
         enabled: true
         weight: 3
       column_images:
-        enabled: true
         weight: 4
+        enabled: false
 field_type: entity_reference_revisions
