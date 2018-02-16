@@ -16,4 +16,4 @@ dependencies:
   - text
   - user
 version: 8.x-0.1
-package: Paragraphs
+package: Paragraphs columns
