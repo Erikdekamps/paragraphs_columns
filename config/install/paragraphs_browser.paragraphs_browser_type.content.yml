@@ -10,3 +10,4 @@ groups:
     weight: 0
 map:
   column_text: columns
+  column_images: columns

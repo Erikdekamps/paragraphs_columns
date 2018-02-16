@@ -12,6 +12,7 @@ dependencies:
   - options
   - paragraphs
   - paragraphs_browser
+  - paragraphs_columns_images
   - path
   - text
   - user

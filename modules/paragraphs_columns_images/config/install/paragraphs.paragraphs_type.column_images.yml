@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: column_images
+label: 'Column images'
+icon_uuid: null
+description: 'An images column that can be placed in a row.'
+behavior_plugins: {  }
